@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #05070d;
+  --card: #0d1117;
+  --card-2: #131722;
+  --border: #232a36;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --green: #16a34a;
+  --blue: #2563eb;
+  --purple: #7c3aed;
+  --gold: #f59e0b;
+  --red: #dc2626;
+  --cyan: #0891b2;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top, rgba(124, 58, 237, 0.15), transparent 30%),
+    radial-gradient(circle at right, rgba(37, 99, 235, 0.12), transparent 25%),
+    linear-gradient(180deg, #05070d 0%, #03050a 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(19, 23, 34, 0.95), rgba(13, 17, 23, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+}
+
+.glow-purple {
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.25), 0 0 24px rgba(124, 58, 237, 0.18);
+}
+
+.glow-blue {
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25), 0 0 24px rgba(37, 99, 235, 0.18);
+}
+
+.glow-green {
+  box-shadow: 0 0 0 1px rgba(22, 163, 74, 0.25), 0 0 24px rgba(22, 163, 74, 0.18);
+}
+
+.glow-gold {
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.25), 0 0 24px rgba(245, 158, 11, 0.18);
+}
+
+.page-wrap {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.stat-card {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(19, 23, 34, 0.98), rgba(13, 17, 23, 0.96));
+  border: 1px solid var(--border);
+}
+
+.lux-btn {
+  border-radius: 0.9rem;
+  padding: 0.8rem 1.1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.lux-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.kbc-logo {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  animation: kbcIntro 1.8s ease-out forwards, neonPulse 2s ease-in-out infinite alternate;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  text-shadow:
+    0 0 5px rgba(255, 40, 40, 0.7),
+    0 0 10px rgba(255, 40, 40, 0.75),
+    0 0 20px rgba(255, 0, 0, 0.75),
+    0 0 40px rgba(255, 0, 0, 0.6),
+    0 0 80px rgba(255, 0, 0, 0.35);
+}
+
+@keyframes kbcIntro {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.75) rotate(-6deg);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.04) rotate(1deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes neonPulse {
+  0% {
+    text-shadow:
+      0 0 4px rgba(255, 40, 40, 0.6),
+      0 0 8px rgba(255, 40, 40, 0.7),
+      0 0 18px rgba(255, 0, 0, 0.65),
+      0 0 34px rgba(255, 0, 0, 0.45);
+  }
+  100% {
+    text-shadow:
+      0 0 6px rgba(255, 70, 70, 0.9),
+      0 0 12px rgba(255, 70, 70, 0.95),
+      0 0 24px rgba(255, 0, 0, 0.95),
+      0 0 48px rgba(255, 0, 0, 0.75),
+      0 0 80px rgba(255, 0, 0, 0.45);
+  }
+}
+
+.kbc-logo {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  animation: kbcIntro 1.8s ease-out forwards, neonPulse 2s ease-in-out infinite alternate;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  text-shadow:
+    0 0 5px rgba(255, 40, 40, 0.7),
+    0 0 10px rgba(255, 40, 40, 0.75),
+    0 0 20px rgba(255, 0, 0, 0.75),
+    0 0 40px rgba(255, 0, 0, 0.6),
+    0 0 80px rgba(255, 0, 0, 0.35);
+}
+
+@keyframes kbcIntro {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.75) rotate(-6deg);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.04) rotate(1deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes neonPulse {
+  0% {
+    text-shadow:
+      0 0 4px rgba(255, 40, 40, 0.6),
+      0 0 8px rgba(255, 40, 40, 0.7),
+      0 0 18px rgba(255, 0, 0, 0.65),
+      0 0 34px rgba(255, 0, 0, 0.45);
+  }
+  100% {
+    text-shadow:
+      0 0 6px rgba(255, 70, 70, 0.9),
+      0 0 12px rgba(255, 70, 70, 0.95),
+      0 0 24px rgba(255, 0, 0, 0.95),
+      0 0 48px rgba(255, 0, 0, 0.75),
+      0 0 80px rgba(255, 0, 0, 0.45);
+  }
+}

@@ -1,0 +1,449 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+
+.sicbo-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(127, 90, 255, 0.55), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255, 0, 120, 0.35), transparent 35%),
+    #090816;
+  color: #f2e3db;
+  padding: 130px 24px 120px;
+}
+
+.sicbo-hero {
+  text-align: center;
+}
+
+.sicbo-kicker {
+  color: #c4b5fd;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.sicbo-title {
+  color: #ffee63;
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+  font-size: 140px;
+  margin: 0;
+  line-height: 0.9;
+  text-shadow: 0 0 40px rgba(255, 238, 99, 0.65);
+}
+
+.sicbo-subtitle {
+  color: rgba(242, 227, 219, 0.75);
+  margin-top: 8px;
+}
+
+.sicbo-card {
+  max-width: 980px;
+  margin: 28px auto 0;
+  border-radius: 36px;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  background: rgba(21, 16, 41, 0.92);
+  box-shadow: 0 0 55px rgba(139, 92, 246, 0.35);
+  padding: 32px;
+  backdrop-filter: blur(18px);
+}
+
+.sicbo-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sicbo-muted {
+  color: rgba(196, 181, 253, 0.7);
+  font-size: 14px;
+}
+
+.sicbo-wallet {
+  color: #6ee7b7;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.sicbo-deposit,
+.sicbo-deposit-large {
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+  color: white;
+  padding: 14px 22px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.55);
+}
+
+.dice-area {
+  width: 100%;
+  margin: 34px auto;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  perspective: 900px;
+}
+
+.dice-cube {
+  width: 120px;
+  height: 120px;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #ffffff, #d7ccff);
+  color: #151029;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 18px;
+  box-shadow:
+    inset -10px -10px 25px rgba(0, 0, 0, 0.18),
+    inset 8px 8px 20px rgba(255, 255, 255, 0.85),
+    0 0 45px rgba(167, 139, 250, 0.75);
+  transform-style: preserve-3d;
+}
+
+.dice-cube.rolling {
+  animation: dice-roll 0.65s linear infinite;
+}
+
+@keyframes dice-roll {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+  }
+  35% {
+    transform: rotateX(180deg) rotateY(120deg) rotateZ(80deg) scale(1.08);
+  }
+  70% {
+    transform: rotateX(360deg) rotateY(240deg) rotateZ(160deg) scale(0.96);
+  }
+  100% {
+    transform: rotateX(540deg) rotateY(360deg) rotateZ(260deg) scale(1);
+  }
+}
+
+.dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: transparent;
+  align-self: center;
+  justify-self: center;
+}
+
+.dot.active {
+  background: #151029;
+  box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.25);
+}
+
+.sicbo-total {
+  text-align: center;
+  color: #f2e3db;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.sicbo-bet-box {
+  margin: 26px auto 0;
+  max-width: 280px;
+  text-align: center;
+}
+
+.sicbo-bet-box label {
+  color: rgba(196, 181, 253, 0.75);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.sicbo-input {
+  margin-top: 8px;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  outline: none;
+}
+
+.betType {
+  margin: 28px auto 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.betType button {
+  width: 10rem;
+  padding: 16px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.45);
+  transition: 0.2s;
+}
+
+.betType button span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.betType button:hover {
+  transform: scale(1.05);
+}
+
+.betType button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sicbo-message {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 900;
+  color: #c4b5fd;
+}
+
+.sicbo-message.win {
+  color: #6ee7b7;
+}
+
+.sicbo-message.lose {
+  color: #fca5a5;
+}
+
+.sicbo-center {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.sicbo-result-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.sicbo-info {
+  border-radius: 20px;
+  border: 1px solid rgba(167, 139, 250, 0.22);
+  background: rgba(0, 0, 0, 0.28);
+  padding: 16px;
+  text-align: center;
+}
+
+.sicbo-info p {
+  color: rgba(196, 181, 253, 0.7);
+  font-size: 12px;
+}
+
+.sicbo-info h3 {
+  margin-top: 6px;
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .sicbo-page {
+    padding: 120px 16px 120px;
+  }
+
+  .sicbo-title {
+    font-size: 6.5rem;
+  }
+
+  .sicbo-card {
+    padding: 22px;
+  }
+
+  .dice-area {
+    gap: 12px;
+  }
+
+  .dice-cube {
+    width: 82px;
+    height: 82px;
+    border-radius: 20px;
+    padding: 12px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .sicbo-result-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dice-area {
+  perspective: 1200px;
+}
+
+.dice-cube {
+  position: relative;
+  transform-style: preserve-3d;
+  animation-duration: 0.9s;
+}
+
+.dice-cube::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(190,180,255,0.75));
+  transform: translateZ(-14px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.dice-cube.rolling {
+  animation: real-3d-roll 0.7s linear infinite;
+}
+
+@keyframes real-3d-roll {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(0);
+  }
+  25% {
+    transform: rotateX(180deg) rotateY(90deg) rotateZ(45deg) translateY(-18px);
+  }
+  50% {
+    transform: rotateX(360deg) rotateY(180deg) rotateZ(120deg) translateY(0);
+  }
+  75% {
+    transform: rotateX(540deg) rotateY(270deg) rotateZ(220deg) translateY(-12px);
+  }
+  100% {
+    transform: rotateX(720deg) rotateY(360deg) rotateZ(360deg) translateY(0);
+  }
+}
+
+.table-shake {
+  animation: table-shake 0.16s linear infinite;
+}
+
+@keyframes table-shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(3px); }
+  50% { transform: translateX(-3px); }
+  75% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+.dice-cube.rolling {
+  animation: dice-rolling-3d 0.42s linear infinite;
+}
+
+.dice-cube.settled {
+  animation: dice-land 0.35s ease-out;
+}
+
+@keyframes dice-rolling-3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(0);
+  }
+  25% {
+    transform: rotateX(180deg) rotateY(120deg) rotateZ(90deg) translateY(-18px);
+  }
+  50% {
+    transform: rotateX(360deg) rotateY(240deg) rotateZ(180deg) translateY(0);
+  }
+  75% {
+    transform: rotateX(540deg) rotateY(320deg) rotateZ(260deg) translateY(-12px);
+  }
+  100% {
+    transform: rotateX(720deg) rotateY(360deg) rotateZ(360deg) translateY(0);
+  }
+}
+
+@keyframes dice-land {
+  0% {
+    transform: scale(1.18) translateY(-18px);
+  }
+  60% {
+    transform: scale(0.92) translateY(6px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.win-burst {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(5rem, 14vw, 13rem);
+  font-weight: 1000;
+  color: #6ee7b7;
+  text-shadow: 0 0 60px rgba(110, 231, 183, 0.95);
+  animation: win-burst 1.2s ease-out forwards;
+}
+
+@keyframes win-burst {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-8deg);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.1) rotate(3deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.45) rotate(0deg);
+  }
+}
+
+.lose-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(5rem, 14vw, 13rem);
+  font-weight: 1000;
+  color: #fca5a5;
+  text-shadow: 0 0 60px rgba(248, 113, 113, 0.95);
+  animation: lose-flash 1s ease-out forwards;
+}
+
+@keyframes lose-flash {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+}
+
+.outcome-win .sicbo-card {
+  box-shadow: 0 0 70px rgba(16, 185, 129, 0.45);
+}
+
+.outcome-lose .sicbo-card {
+  box-shadow: 0 0 70px rgba(239, 68, 68, 0.35);
+}
