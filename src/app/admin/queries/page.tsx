@@ -1,5 +1,4 @@
-import Image from "next/image"
-import { redirect } from "next/navigation"
+﻿import { redirect } from "next/navigation"
 import { getCurrentAdmin } from "@/lib/admin"
 import { supabaseAdmin } from "@/lib/supabase/admin"
 
@@ -87,3 +86,4 @@ export default async function AdminQueriesPage() {
     </main>
   )
 }
+

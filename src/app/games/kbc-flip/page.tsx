@@ -1,11 +1,11 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 
 export default function KbcFlipGamePage() {
   const [betAmount, setBetAmount] = useState("10")
   const [loading, setLoading] = useState(false)
-  const [result, setResult] = useState<any>(null)
+  const [result, setResult] = useState<{ result: string; profit: number; payout: number; balance: number; message: string } | null>(null)
   const [message, setMessage] = useState("")
 
   async function playGame() {
@@ -113,3 +113,4 @@ function Info({ title, value }: { title: string; value: string }) {
     </div>
   )
 }
+
