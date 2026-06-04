@@ -33,6 +33,7 @@ export default function AdminPage() {
   }, [])
 
   const cards = [
+    ['Game Control', 'Control KBC AVIATOR and game settings', '/admin/game-control'],
   ['Users', 'Filter users and track user data', '/admin/users'],
 
   ['Deposits', 'Approve deposits and view payment proof', '/admin/deposits'],

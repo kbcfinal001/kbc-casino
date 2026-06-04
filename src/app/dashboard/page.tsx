@@ -86,9 +86,9 @@ export default async function DashboardPage() {
           />
 
           <GameCard
-            title="KBC Flip"
+            title="KBC AVIATOR"
             desc="Flip your luck. Win 2x or lose your bet."
-            href="/games/kbc-flip"
+            href="/games/flyx"
             badge="2x Win"
             icon="🃏"
           />
@@ -204,3 +204,5 @@ function BottomLink({
     </Link>
   )
 }
+
+

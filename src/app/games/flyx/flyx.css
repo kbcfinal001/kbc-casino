@@ -1,0 +1,306 @@
+﻿.aviator-page {
+  min-height: 100vh;
+  background: #070707;
+  color: white;
+  padding: 100px 12px 110px;
+}
+
+.aviator-phone {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  background: #101112;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid #242424;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
+}
+
+.aviator-top {
+  height: 58px;
+  padding: 0 14px;
+  background: #0b0c0d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aviator-logo {
+  color: #ff2454;
+  font-weight: 1000;
+  font-style: italic;
+}
+
+.aviator-top small {
+  color: #888;
+}
+
+.aviator-menu {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.aviator-history {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 12px;
+  background: #101112;
+  color: #8db2ff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.aviator-history span.hot {
+  color: #b779ff;
+}
+
+.aviator-stage {
+  position: relative;
+  height: 300px;
+  margin: 0 10px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #050505;
+  border: 1px solid #222;
+}
+
+.fun-mode {
+  position: absolute;
+  top: 0;
+  z-index: 8;
+  width: 100%;
+  background: #c58405;
+  text-align: center;
+  font-weight: 900;
+  padding: 5px 0;
+}
+
+.aviator-rays {
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(
+    from 220deg,
+    rgba(255, 255, 255, 0.035) 0deg 8deg,
+    transparent 8deg 17deg
+  );
+  transform-origin: bottom left;
+  animation: rays-spin 12s linear infinite;
+}
+
+@keyframes rays-spin {
+  to { transform: rotate(360deg); }
+}
+
+.aviator-red-area {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 72%;
+  height: 62%;
+  background: linear-gradient(35deg, rgba(255, 0, 60, 0.86), rgba(255, 0, 60, 0.08));
+  clip-path: polygon(0 100%, 100% 100%, 95% 10%, 70% 25%, 45% 52%, 20% 82%);
+}
+
+.aviator-curve {
+  position: absolute;
+  left: 10px;
+  bottom: 12px;
+  width: 70%;
+  height: 62%;
+  border-bottom: 5px solid #ff2454;
+  border-right: 5px solid #ff2454;
+  border-radius: 0 0 95% 0;
+  transform: skewX(-8deg);
+  filter: drop-shadow(0 0 10px rgba(255, 36, 84, 0.95));
+}
+
+.aviator-plane-wrap {
+  position: absolute;
+  left: 15%;
+  bottom: 22%;
+  z-index: 6;
+  animation: plane-path 5.5s ease-in-out infinite;
+}
+
+.aviator-plane {
+  color: #ff2454;
+  font-size: 60px;
+  transform: rotate(-18deg);
+  filter: drop-shadow(0 0 16px rgba(255, 36, 84, 1));
+  animation: plane-float 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes plane-path {
+  0% { transform: translate(0, 0); }
+  45% { transform: translate(230px, -125px); }
+  80% { transform: translate(305px, -165px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes plane-float {
+  from { transform: rotate(-15deg) translateY(0); }
+  to { transform: rotate(-23deg) translateY(-10px); }
+}
+
+.aviator-stage.crashed .aviator-plane-wrap {
+  animation: crash-fall 0.9s ease-in forwards;
+}
+
+@keyframes crash-fall {
+  to { transform: translate(330px, 220px) rotate(60deg); opacity: 0; }
+}
+
+.aviator-multiplier {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  font-weight: 1000;
+  color: white;
+  text-shadow: 0 0 22px rgba(255, 36, 84, 0.7);
+}
+
+.aviator-stage.waiting .aviator-multiplier {
+  color: #a1a1aa;
+}
+
+.aviator-stage.crashed .aviator-multiplier {
+  color: #fb7185;
+}
+
+.aviator-control {
+  background: #18191a;
+  margin: 8px 10px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.aviator-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #111;
+  border-radius: 999px;
+  overflow: hidden;
+  max-width: 220px;
+  margin: 0 auto 12px;
+}
+
+.aviator-switch button {
+  border: 0;
+  padding: 8px;
+  color: #ccc;
+  background: transparent;
+}
+
+.aviator-switch button:first-child {
+  background: #303236;
+  border-radius: 999px;
+}
+
+.aviator-control-body {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.aviator-stepper {
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
+  align-items: center;
+  gap: 5px;
+}
+
+.aviator-stepper button {
+  border: 0;
+  background: #2b2d30;
+  color: white;
+  height: 34px;
+  border-radius: 999px;
+  font-size: 20px;
+}
+
+.aviator-stepper input {
+  width: 100%;
+  background: #111;
+  border: 0;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+.aviator-presets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.aviator-presets button {
+  background: #202225;
+  border: 0;
+  color: #999;
+  padding: 7px;
+  border-radius: 8px;
+}
+
+.aviator-bet-btn {
+  height: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  background: #18a800;
+  color: white;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.aviator-bet-btn.cashout {
+  background: #f59e0b;
+  color: #111;
+}
+
+.aviator-bet-btn span {
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.aviator-message {
+  text-align: center;
+  color: #ccc;
+  padding: 12px;
+  font-weight: 900;
+}
+
+.aviator-message.running {
+  color: #fff;
+}
+
+.aviator-message.crashed {
+  color: #fb7185;
+}
+
+.aviator-message.waiting {
+  color: #a78bfa;
+}
+
+@media (max-width: 480px) {
+  .aviator-multiplier {
+    font-size: 58px;
+  }
+
+  .aviator-control-body {
+    grid-template-columns: 1fr;
+  }
+
+  .aviator-bet-btn {
+    height: 80px;
+  }
+}
