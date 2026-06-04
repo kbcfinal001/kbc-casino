@@ -15,7 +15,7 @@ export async function GET() {
   try {
     const now = Date.now()
 
-    let { data: state } = await supabaseAdmin
+    const { data: state } = await supabaseAdmin
       .from("aviator_state")
       .select("*")
       .eq("id", "global")
@@ -189,3 +189,4 @@ export async function GET() {
     })
   }
 }
+
